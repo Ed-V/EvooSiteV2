@@ -6,8 +6,12 @@
 #
 # If you're trying out Bolt, just keep it set to SQLite for now.
 database:
-    driver: sqlite
-    databasename: bolt
+    driver: mysql
+    databasename: evooDB
+    host: localhost
+    port: 8889
+    username: root
+    password: root
 
 # The name of the website
 sitename: A sample site
