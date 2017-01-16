@@ -84,6 +84,39 @@ entries:
     recordsperpage: 10
 
 
+works:
+    name: Works
+    singular_name: Work
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        slug:
+            type: slug
+            uses: title
+        body:
+            type: html
+            height: 300px
+        image:
+            type: image
+            group: media
+        video:
+            type: video
+    relations:
+        pages:
+          multiple: false
+          order: title
+          label: Select a page
+    taxonomy: [ workscategories, tags, worksgroups ]
+    record_template: entry.twig
+    listing_template: listing.twig
+    listing_records: 10
+    default_status: publish
+    sort: -datepublish
+    recordsperpage: 10
+
+
 # The 'Showcases' is not particularly useful in most cases, but it does a good
 # job of showcasing most of the available fieldtypes. Feel free to delete it, or
 # copy some fields to your own contenttypes.

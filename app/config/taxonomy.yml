@@ -16,6 +16,24 @@ groups:
     options: { main: "The main group", meta: "Meta group", other: "The other stuff" }
     has_sortorder: true
 
+worksgroups:
+    name: Work Group
+    slug: worksgroups
+    singular_slug: worksgroup
+    behaves_like: grouping
+    options: { sample: "Samples", project: "Projects" }
+    has_sortorder: true
+
+
+workscategories:
+    name: Work Categories
+    slug: workscategories
+    singular_name: Work Category
+    singular_slug: workcategory
+    behaves_like: categories
+    multiple: true
+    options: [ web, desktop ]
+
 categories:
     name: Categories
     slug: categories
