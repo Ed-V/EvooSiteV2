@@ -2,8 +2,8 @@
 # details: https://docs.bolt.cm/configuration/menus
 
 main:
-    - label: Home
-      title: This is the first menu item.
+    - label: Edbert Voo
+      title: Go to homepage
       path: homepage
       class: first
     - label: Second item
