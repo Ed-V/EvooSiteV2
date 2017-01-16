@@ -457,6 +457,9 @@
 #primary-menu .first {
   font-style: italic; }
 
+#footerContainer {
+  background: black; }
+
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
        ========================================================================== */
