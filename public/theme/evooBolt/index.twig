@@ -12,15 +12,6 @@
 
         {% setcontent works = 'works/latest/5' %}
 
-        {{ dump(works) }}
-        <p>Work group stuff:</p>
-        {% for work in works %}
-
-            <p>{{ work.group.name }}</p>
-
-        {% endfor %}
-
-
         <div class="orbit" aria-label="Favorite Space Pictures" data-orbit>
             <nav class="orbit-bullets">
                 {% for i in 0..(works|length-1) %}
