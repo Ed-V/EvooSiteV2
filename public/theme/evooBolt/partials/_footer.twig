@@ -2,7 +2,16 @@
 <footer>
 
     <div id="footerContainer">
-        <p>test</p>
+        <div class="row">
+            <div class="column">
+                <form method="get" action="{{ path('search') }}" id="searchform-inline" enctype="text/plain">
+                    <ul class="menu">
+                        <li><input type="search" value="{% if search is defined %}{{ search|escape }}{% endif %}" placeholder="{{ __('general.phrase.search-ellipsis') }}" name="search"></li>
+                        <li><button type="submit" class="button secondary">{{ __('general.phrase.search') }}</button></li>
+                    </ul>
+                </form>
+            </div>
+        </div>
     </div>
 
 </footer>

@@ -461,6 +461,7 @@ body a {
   font-style: italic; }
 
 #footerContainer {
+  padding-top: 30px;
   background: black; }
 
 .fpOrbitImgContainer {
