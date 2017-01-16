@@ -1,6 +1,6 @@
 //body
 //-------
-body a{
+body a {
   transition: all .2s ease-in;
 }
 
@@ -16,4 +16,52 @@ body a{
 
 #footerContainer {
   background: black;
+}
+
+//index
+//--------
+
+
+.fpOrbitImgContainer {
+  position: relative;
+  width: 100%; /* for IE 6 */
+
+  img {
+    filter: brightness(50%);
+  }
+}
+
+.fpWorkTextContainer {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.fpWorkButton {
+  margin-top: 20px;
+}
+
+.fpWorkButton a{
+   border: $white solid 1px;
+   padding: 5px;
+   color: $white;
+
+  &:hover{
+    border: #EAC67A solid 1px;
+    transition: all .2s ease-in;
+  }
+
+ }
+
+//Orbit
+//-------
+
+.orbit-previous {
+  transition: all .2s ease-in;
+}
+
+.orbit-next {
+  transition: all .2s ease-in;
 }

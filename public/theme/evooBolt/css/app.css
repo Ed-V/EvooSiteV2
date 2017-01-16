@@ -463,6 +463,37 @@ body a {
 #footerContainer {
   background: black; }
 
+.fpOrbitImgContainer {
+  position: relative;
+  width: 100%;
+  /* for IE 6 */ }
+  .fpOrbitImgContainer img {
+    filter: brightness(50%); }
+
+.fpWorkTextContainer {
+  position: absolute;
+  top: 20%;
+  left: 0;
+  width: 100%;
+  text-align: center; }
+
+.fpWorkButton {
+  margin-top: 20px; }
+
+.fpWorkButton a {
+  border: #fefefe solid 1px;
+  padding: 5px;
+  color: #fefefe; }
+  .fpWorkButton a:hover {
+    border: #EAC67A solid 1px;
+    transition: all .2s ease-in; }
+
+.orbit-previous {
+  transition: all .2s ease-in; }
+
+.orbit-next {
+  transition: all .2s ease-in; }
+
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
        ========================================================================== */
@@ -3463,7 +3494,7 @@ select {
   [data-whatinput='mouse'] .orbit-previous, [data-whatinput='mouse'] .orbit-next {
     outline: 0; }
   .orbit-previous:hover, .orbit-next:hover, .orbit-previous:active, .orbit-next:active, .orbit-previous:focus, .orbit-next:focus {
-    background-color: rgba(10, 10, 10, 0.5); }
+    background-color: #EAC67A; }
 
 .orbit-previous {
   left: 0; }
@@ -3484,11 +3515,11 @@ select {
     height: 1.2rem;
     margin: 0.1rem;
     border-radius: 50%;
-    background-color: #cacaca; }
+    background-color: #fefefe; }
     .orbit-bullets button:hover {
-      background-color: #8a8a8a; }
+      background-color: #EAC67A; }
     .orbit-bullets button.is-active {
-      background-color: #8a8a8a; }
+      background-color: #EAC67A; }
 
 .pagination {
   margin-left: 0;
