@@ -454,6 +454,9 @@
 .long-delay {
   animation-delay: 700ms !important; }
 
+#primary-menu .first {
+  font-style: italic; }
+
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
        ========================================================================== */
@@ -2770,8 +2773,8 @@ select {
   .menu.nested {
     margin-left: 1rem; }
   .menu .active > a {
-    background: #1779ba;
-    color: #fefefe; }
+    background: #fefefe;
+    color: #171717; }
   .menu.menu-bordered li {
     border: 1px solid #e6e6e6; }
     .menu.menu-bordered li:not(:first-child) {
@@ -4009,8 +4012,8 @@ a.thumbnail {
 
 .title-bar {
   padding: 0.5rem;
-  background: #0a0a0a;
-  color: #fefefe; }
+  background: #fefefe;
+  color: #171717; }
   .title-bar::before, .title-bar::after {
     display: table;
     content: ' '; }
@@ -4110,7 +4113,7 @@ a.thumbnail {
     clear: both; }
   .top-bar,
   .top-bar ul {
-    background-color: #e6e6e6; }
+    background-color: #fefefe; }
   .top-bar input {
     max-width: 200px;
     margin-right: 1rem; }
