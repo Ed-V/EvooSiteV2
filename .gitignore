@@ -24,3 +24,4 @@ Vagrantfile
 .buildpath
 .project
 /bolt.log
+/public/theme/evooBolt/config.codekit3
