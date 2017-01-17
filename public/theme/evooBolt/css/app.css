@@ -462,7 +462,8 @@ body a {
 
 #footerContainer {
   padding-top: 30px;
-  background: black; }
+  background: black;
+  padding-bottom: 30px; }
 
 .fpOrbitImgContainer {
   position: relative;
@@ -2065,12 +2066,12 @@ kbd {
   line-height: 1;
   text-align: center;
   cursor: pointer;
-  background-color: #171717;
+  background-color: #eac67a;
   color: #fefefe; }
   [data-whatinput='mouse'] .button {
     outline: 0; }
   .button:hover, .button:focus {
-    background-color: #141414;
+    background-color: #e3b24c;
     color: #fefefe; }
   .button.tiny {
     font-size: 0.6rem; }
