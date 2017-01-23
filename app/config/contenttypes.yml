@@ -95,12 +95,23 @@ works:
         slug:
             type: slug
             uses: title
+        downloads:
+            type: html
+            height: 300px
         body:
+            type: html
+            height: 300px
+        tech_used:
+            type: html
+            height: 300px
+        changelog:
             type: html
             height: 300px
         image:
             type: image
             group: media
+        imagelist:
+            type: imagelist
         video:
             type: video
     relations:
@@ -109,7 +120,7 @@ works:
           order: title
           label: Select a page
     taxonomy: [ workscategories, tags, worksgroups ]
-    record_template: entry.twig
+    record_template: workEntry.twig
     listing_template: listing.twig
     listing_records: 10
     default_status: publish
