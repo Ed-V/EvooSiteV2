@@ -4,6 +4,14 @@ body a {
   transition: all .2s ease-in;
 }
 
+.show-for-none {
+  display: none;
+}
+
+.fadeScroll {
+  opacity: 0;
+}
+
 //Menu items
 //----------
 
@@ -22,7 +30,6 @@ body a {
 
 //index
 //--------
-
 
 .fpOrbitImgContainer {
   position: relative;
@@ -45,17 +52,17 @@ body a {
   margin-top: 20px;
 }
 
-.fpWorkButton a{
-   border: $white solid 1px;
-   padding: 5px;
-   color: $white;
+.fpWorkButton a {
+  border: $white solid 1px;
+  padding: 5px;
+  color: $white;
 
-  &:hover{
+  &:hover {
     border: #EAC67A solid 1px;
     transition: all .2s ease-in;
   }
 
- }
+}
 
 //Orbit
 //-------
@@ -67,3 +74,85 @@ body a {
 .orbit-next {
   transition: all .2s ease-in;
 }
+
+//Work Entry
+//------------
+
+#workEntryTitleContainer {
+  background: no-repeat;
+  background-size: cover;
+}
+
+#workEntryTitleSize {
+  text-align: center;
+  position: relative;
+  padding: 30px;
+}
+
+#workEntryTitle {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+#workEntryPublish {
+
+  @include breakpoint(medium up) {
+    div:nth-child(2) {
+      text-align: right;
+    }
+  }
+
+}
+
+#workEntryPublishContainer {
+  padding-top: 1%;
+  background: #233237;
+}
+
+#workEntryContentContainer {
+  background: #233237;
+}
+
+#workEntryTechUsedContainer {
+  background: #EAC67A;
+  color: black;
+}
+
+#workEntryImageListContainer {
+  background: #984B43;
+}
+
+#workEntryContainer {
+  h2 {
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+
+#workEntryDownload {
+  text-align: center;
+
+  a {
+    color: black;
+  }
+}
+
+#workEntryFooterContainer {
+  margin-top: 2%;
+}
+
+#workEntryFooter {
+  border-top: solid white 1px;
+  padding-top: 1%;
+}
+
+.workEntryPaddingSide {
+  @include breakpoint(small only) {
+    padding-right: 1%;
+    padding-left: 1%;
+  }
+}
+
+
+
+
+

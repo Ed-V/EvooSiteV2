@@ -1,0 +1,148 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+    <div id="workEntryContainer">
+
+        <div id="workEntryTitleContainer" style="background-image: url({{ record.image|image }})">
+            <div id="workEntryTitleSize">
+                <h1 id="workEntryTitle">{{ record.title }}</h1>
+            </div>
+
+        </div>
+
+        <div class="row">
+            {% if record.editlink() %}
+                <p>User logged in, select an option</p>
+                <span class="edit-link"><a href="{{ record.editlink() }}"><strong>Edit</strong></a></span>
+            {% endif %}
+        </div>
+
+        <div id="workEntryPublishContainer">
+            <div class="row">
+                <div id="workEntryPublish">
+                    <div class="column medium-6">
+                        <p>Published: {{ record.published|localedatetime }}</p>
+                    </div>
+                    <div class="column medium-6">
+                        <p>Last updated: {{ record.datechanged|localedatetime }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{ dump(record) }}
+
+
+        {% if (record.downloads is defined) and (record.downloads|length > 0) %}
+            <div id="workEntryDownloadContainer">
+                <div class="row">
+                    <div class="column">
+                        <h2 class="fadeScroll">Downloads</h2>
+
+                        <div id="workEntryDownload" class="fadeScroll">
+                            {% for download in record.downloads %}
+                                <h3>{{ download.title }}</h3>
+                                <a href="/files/{{ download.filename }}" class="button">Download</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        {% endif %}
+
+        {% if (record.body is defined) and (record.body != '') %}
+            <div id="workEntryContentContainer">
+
+                <div class="row">
+                    <h2 class="fadeScroll">About {{ record.title }}</h2>
+                    <div id="workEntryContent" class="fadeScroll">
+                        {{ record.body }}
+                    </div>
+                </div>
+
+            </div>
+
+        {% endif %}
+
+        {% if (record.tech_used is defined) and (record.tech_used != '') %}
+            <div id="workEntryTechUsedContainer">
+                <h2 class="fadeScroll">Technology Used</h2>
+                <div class="row">
+                    <div id="workEntryTechUsed" class="fadeScroll">
+                        {{ record.tech_used }}
+                    </div>
+                </div>
+
+            </div>
+
+        {% endif %}
+
+        {% if (record.imagelist is defined) and (record.imagelist|length > 0) %}
+            <div id="workEntryImageListContainer">
+                <h2 class="fadeScroll">Gallery</h2>
+                <div class="row">
+                    <div id="workEntryImageList" class="fadeScroll">
+                        {% for image in record.imagelist %}
+                            <p>This place: {{ image.title }}</p>
+                            <p>this image is: {{ image|image }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+
+        {% endif %}
+
+        {% if (record.changelog is defined) and (record.changelog != '') %}
+            <div id="workEntryChangelogContainer">
+                <h2 class="fadeScroll">Changelog</h2>
+                <div class="row">
+                    <div id="workEntryChangelog" class="fadeScroll">
+                        {{ record.changelog }}
+                    </div>
+                </div>
+
+            </div>
+
+        {% endif %}
+
+
+
+
+        {# Uncomment this if you wish to dump the entire record to the client, for debugging purposes.
+        {{ dump(record) }}
+        #}
+
+
+    </div>
+
+
+
+
+
+{% endblock main %}
+
+
+{% block extrafooter %}
+
+    <div id="workEntryFooterContainer">
+        <div class="row">
+
+            <div id="workEntryFooter">
+               {% include 'partials/_workEntryFooter.twig' with { 'record': record, 'extended': true } %}
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block bottomincludes %}
+<script src="{{ asset('js/fadescroll.js', 'theme') }}"></script>
+{% endblock %}
