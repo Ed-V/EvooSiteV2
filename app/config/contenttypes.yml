@@ -96,8 +96,7 @@ works:
             type: slug
             uses: title
         downloads:
-            type: html
-            height: 300px
+            type: filelist
         body:
             type: html
             height: 300px
