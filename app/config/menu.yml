@@ -21,6 +21,8 @@ main:
             path: page/3
     - label: All pages
       path: pages/
+    - label: Works
+      path: works/
     - label: The Bolt site
       link: http://bolt.cm
       class: last
