@@ -97,6 +97,9 @@ works:
             uses: title
         downloads:
             type: filelist
+        teaser:
+            type: text
+            height: 300px
         body:
             type: html
             height: 300px
@@ -120,7 +123,7 @@ works:
           label: Select a page
     taxonomy: [ workscategories, tags, worksgroups ]
     record_template: workEntry.twig
-    listing_template: listing.twig
+    listing_template: workListing.twig
     listing_records: 10
     default_status: publish
     sort: -datepublish
