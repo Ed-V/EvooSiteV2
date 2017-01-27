@@ -1,0 +1,130 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+    <div id="workListingContainer">
+
+
+        <div id="workListingTitleContainer">
+            <div id="workListingTitleLine">
+                <h1 class="text-center">Works</h1>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="column">
+
+
+                {# This template is used for 'listings': Generic pages that list a number of
+                records from a certain contenttype. These records are available as an array
+                called 'records'. In the for-loop below, we iterate over the records that
+                are on this page. It can be used for overview pages like 'all entries', or
+                'all records tagged with kittens'. #}
+
+                {# If used for listing a taxonomy, we add a heading.: #}
+                {% if taxonomytype is defined %}
+                    <h1>
+                        {{ __('general.phrase.overview-for') }}
+                        {% if taxonomy.options[slug] is defined %}
+                            {{ taxonomy.options[slug] }}
+                        {% else %}
+                            {{ slug }}
+                        {% endif %}
+                    </h1>
+                    {# Taxonomies are fetched unordered by design except if 'has_sortorder'
+                       is set to true. This way we keep 'grouping' intact in the listing. #}
+                    {% if not taxonomy.has_sortorder %}
+                        {# If we specified an order in config.yml, sort them here, accordingly: #}
+                        {% set records = records|order(app.config.get('general/listing_sort')) %}
+                    {% endif %}
+                {% endif %}
+
+
+                {% if (records|length >=4) %}
+                    {% set colLength = 3 %}
+                {% else %}
+                    {% set colLength = 12 / records|length %}
+                {% endif %}
+
+                {% set cardCounter = 1 %}
+
+                {% for record in records %}
+
+                {% if cardCounter == 1 %}
+                <div class="row" data-equalizer data-equalize-on="medium">
+                    {% endif %}
+
+
+                    <div class="column small-12 medium-{{ colLength }}{% if loop.last %} end{% endif %}" >
+                        <div class="card fadeScroll">
+                            <a href="{{ record.link }}">
+                                {{ record.image|showimage }}
+                                <div class="card-section" data-equalizer-watch>
+                                    <h2>{{ record.title }}</h2>
+                                    <p>{{ record.teaser }}</p>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+
+
+                    {% if loop.last and cardCounter !=4 %}
+                </div>
+                {% endif %}
+
+                {% if cardCounter == 4 %}
+            </div>
+            {% set cardCounter = 1 %}
+            {% else %}
+                {% set cardCounter = cardCounter + 1 %}
+            {% endif %}
+
+
+            {#
+                                    {{ popup(record.image, 1200, 500) }}
+
+                                    #}
+            {# display something introduction-like.. #}{#
+
+                                    {% if record.introduction %}
+                                        {{ record.introduction }}
+                                    {% elseif record.teaser %}
+                                        {{ record.teaser }}
+                                    {% else %}
+                                        <p>{{ record.excerpt(300, false, search|default('')) }}</p>
+                                    {% endif %}
+            #}
+
+            {#{% include 'partials/_recordfooter.twig' with { 'record': record } %}#}
+
+
+
+
+            {% else %}
+                <article>
+
+                    <h2>{{ __('general.phrase.no-content-found') }}</h2>
+
+                    <p>
+                        {{ __("Unfortunately, no content could be found. Try another page, or go to the <a href=\"%paths_root%\">homepage</a>.", {'%paths_root%': path('homepage')} ) }}
+                    </p>
+
+                </article>
+            {% endfor %}
+
+            {# If there are more records than will fit on one page, the pager is shown. #}
+            {{ pager(template = 'partials/_sub_pager.twig') }}
+
+        </div>
+    </div>
+
+    </div>
+
+
+{% endblock main %}
+
+{% block bottomincludes %}
+    <script src="{{ asset('js/fadescroll.js', 'theme') }}"></script>
+{% endblock %}
+

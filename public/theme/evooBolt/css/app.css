@@ -553,6 +553,25 @@ body a {
     padding-right: 1%;
     padding-left: 1%; } }
 
+#workListingTitleContainer {
+  background: #233237;
+  padding-top: 0px;
+  padding-bottom: 0px; }
+
+#workListingTitleLine {
+  background: url("../assets/images/white-line.jpg");
+  background-repeat: repeat-y;
+  background-position: center;
+  padding-bottom: 3%;
+  padding-top: 3%;
+  margin-bottom: 20px; }
+
+#workListingTitleContainer h1 {
+  background: #233237; }
+
+#workListingContainer .card {
+  color: black; }
+
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
        ========================================================================== */
