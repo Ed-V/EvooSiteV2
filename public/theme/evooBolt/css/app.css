@@ -556,6 +556,9 @@ body a {
 #workEntryImageList .card h4 {
   color: black; }
 
+#workEntryImageList .reveal h4 {
+  color: black; }
+
 #workListingTitleContainer {
   background: #233237;
   padding-top: 0px;
@@ -572,7 +575,7 @@ body a {
 #workListingTitleContainer h1 {
   background: #233237; }
 
-#workListingContainer .card {
+.workEntryRevealWrapper {
   color: black; }
 
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */

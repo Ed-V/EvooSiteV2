@@ -157,6 +157,12 @@ body a {
 }
 
 
+#workEntryImageList .reveal h4{
+  color: black;
+}
+
+
+
 
 //Works Listing
 //-------------
@@ -183,7 +189,7 @@ $workListingBackground: #233237;
   background: $workListingBackground;
 }
 
-#workListingContainer .card {
+.workEntryRevealWrapper {
   color: black;
 }
 

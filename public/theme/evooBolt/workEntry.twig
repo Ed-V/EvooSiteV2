@@ -31,7 +31,6 @@
         </div>
     </div>
 
-    {{ dump(record) }}
 
 
     {% if (record.downloads is defined) and (record.downloads|length > 0) %}
@@ -95,6 +94,9 @@
 
                     {% set cardCounter = 1 %}
 
+                    {{ dump(record) }}
+
+
                     {% for image in record.imagelist %}
 
                     {% if cardCounter == 1 %}
@@ -103,13 +105,21 @@
 
 
                         <div class="column small-12 medium-{{ colLength }}{% if loop.last %} end{% endif %}">
-                            <div class="card">
-                                {% if image.title is defined and image.title !='' %}
-                                 <div class="card-section" data-equalizer-watch>
+                            <div class="reveal" id="workEntryGalleryImage{{ loop.index }}" data-reveal>
+                                <div class="workEntryRevealWrapper">
                                     <h4>{{ image.title }}</h4>
+                                    <a href="{{ image|image }}">{{ image|showimage }}</a>
                                 </div>
-                                {% endif %}
-                                {{ image|showimage }}
+                            </div>
+                            <div class="card">
+                                <a data-open="workEntryGalleryImage{{ loop.index }}">
+                                    {% if image.title is defined and image.title !='' %}
+                                        <div class="card-section" data-equalizer-watch>
+                                            <h4>{{ image.title }}</h4>
+                                        </div>
+                                    {% endif %}
+                                    {{ image|showimage }}
+                                </a>
                             </div>
                         </div>
 
