@@ -553,6 +553,9 @@ body a {
     padding-right: 1%;
     padding-left: 1%; } }
 
+#workEntryImageList .card h4 {
+  color: black; }
+
 #workListingTitleContainer {
   background: #233237;
   padding-top: 0px;
