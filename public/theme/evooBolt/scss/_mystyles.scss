@@ -12,6 +12,13 @@ body a {
   opacity: 0;
 }
 
+@include breakpoint(small only) {
+  .smallMargin{
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+}
+
 //Menu items
 //----------
 

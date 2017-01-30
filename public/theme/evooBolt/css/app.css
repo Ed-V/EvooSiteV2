@@ -463,6 +463,11 @@ body a {
 .fadeScroll {
   opacity: 0; }
 
+@media screen and (max-width: 39.9375em) {
+  .smallMargin {
+    margin-left: 2%;
+    margin-right: 2%; } }
+
 #primary-menu .first {
   font-style: italic; }
 
