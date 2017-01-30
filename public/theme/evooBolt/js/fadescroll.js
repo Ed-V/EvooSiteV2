@@ -22,7 +22,7 @@ $(function () {
             var bottom_of_screen = $(window).scrollTop() + $(window).height();
             var result = false;
 
-            if (((bottom_of_screen > top_of_element) && ($(window).scrollTop() < top_of_element)) || ((bottom_of_screen > bottom_of_element) && ($(window).scrollTop() < bottom_of_element))) {
+            if (((bottom_of_screen >= top_of_element) && ($(window).scrollTop() <= top_of_element)) || ((bottom_of_screen >= bottom_of_element) && ($(window).scrollTop() <= bottom_of_element)) || (bottom_of_screen <= bottom_of_element && $(window).scrollTop()>top_of_element)) {
                 result = true;
             }
 
