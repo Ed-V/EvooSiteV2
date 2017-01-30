@@ -57,7 +57,7 @@
 
             <div class="row">
                 <h2 class="fadeScroll">About {{ record.title }}</h2>
-                <div id="workEntryContent" class="fadeScroll">
+                <div id="workEntryContent" class="fadeScroll smallMargin">
                     {{ record.body }}
                 </div>
             </div>
@@ -70,7 +70,7 @@
         <div id="workEntryTechUsedContainer">
             <h2 class="fadeScroll">Technology Used</h2>
             <div class="row">
-                <div id="workEntryTechUsed" class="fadeScroll">
+                <div id="workEntryTechUsed" class="fadeScroll smallMargin">
                     {{ record.tech_used }}
                 </div>
             </div>
@@ -152,7 +152,7 @@
         <div id="workEntryChangelogContainer">
             <h2 class="fadeScroll">Changelog</h2>
             <div class="row">
-                <div id="workEntryChangelog" class="fadeScroll">
+                <div id="workEntryChangelog" class="fadeScroll smallMargin">
                     {{ record.changelog }}
                 </div>
             </div>
@@ -183,7 +183,7 @@
     <div id="workEntryFooterContainer">
         <div class="row">
 
-            <div id="workEntryFooter">
+            <div id="workEntryFooter" class="smallMargin">
                 {% include 'partials/_workEntryFooter.twig' with { 'record': record, 'extended': true } %}
             </div>
 
