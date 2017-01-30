@@ -469,6 +469,13 @@ body a {
     margin-left: 2%;
     margin-right: 2%; } }
 
+.revealIosFixFull {
+  top: 0 !important;
+  padding-bottom: 100px !important; }
+
+.darkText {
+  color: black; }
+
 #primary-menu .first {
   font-style: italic; }
 
@@ -491,12 +498,12 @@ body a {
   .fpNewsTitleItem {
     font-size: 20px; } }
 
-/*  @include breakpoint(small only) {
-    .smallMargin{
-      margin-left: 2%;
-      margin-right: 2%;
-    }
-  }*/
+.fpNewsCardTeaser {
+  color: black; }
+
+#fpCloseNews {
+  position: fixed; }
+
 .fpOrbitImgContainer {
   position: relative;
   width: 100%;
@@ -588,21 +595,35 @@ body a {
 #workListingTitleContainer {
   background: #233237;
   padding-top: 0px;
-  padding-bottom: 0px; }
+  padding-bottom: 3%;
+  margin-bottom: 20px; }
 
 #workListingTitleLine {
   background: url("../assets/images/white-line.jpg");
   background-repeat: repeat-y;
   background-position: center;
-  padding-bottom: 3%;
-  padding-top: 3%;
-  margin-bottom: 20px; }
+  padding-top: 3%; }
 
 #workListingTitleContainer h1 {
   background: #233237; }
 
 .workEntryRevealWrapper {
   color: black; }
+
+#entryListingTitleContainer {
+  background: #984B43;
+  padding-top: 0px;
+  padding-bottom: 3%;
+  margin-bottom: 20px; }
+
+#entryListingTitleLine {
+  background: url("../assets/images/white-line.jpg");
+  background-repeat: repeat-y;
+  background-position: center;
+  padding-top: 3%; }
+
+#entryListingTitleContainer h1 {
+  background: #984B43; }
 
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document

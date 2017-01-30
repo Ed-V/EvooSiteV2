@@ -30,22 +30,25 @@
             </form>
 
             {% for record in records %}
-                <article>
 
-                    <h2><a href="{{ record.link }}">{{ record.title }}</a></h2>
-
-                    {% if record.image!="" %}
-                        <div class="large-4 imageholder">
-                            <a href="{{ image(record.image) }}">
-                                <img src="{{ thumbnail(record.image, 400, 260) }}">
-                            </a>
+                <div class="media-object">
+                    <div class="media-object-section">
+                        <div class="thumbnail">
+                            <a data-open="result{{ loop.index }}"><img src="{{ thumbnail(record.image) }}"></a>
                         </div>
-                    {% endif %}
+                    </div>
+                    <div class="media-object-section">
+                        <a href="{{ record.link }}"><h4>{{ record.title }}</h4></a>
+                        {{ record.teaser|excerpt(300) }}
+                    </div>
+                </div>
 
-                    {# display something introduction-like.. #}
-                    <p>{{ record.excerpt(300, false, search|default('')) }}</p>
-
-                </article>
+                <div class="reveal large darkText" id="result{{ loop.index }}" data-reveal>
+<a href="{{ record.image|image }}">{{ record.image|showimage }}</a>
+                    <button class="close-button" data-close aria-label="Close modal" type="button">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
 
                 {% if not loop.last %}
                     <hr>

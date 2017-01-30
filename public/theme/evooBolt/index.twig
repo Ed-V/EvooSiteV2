@@ -4,9 +4,11 @@
 
 
     <div id="fpNewsContainer">
+
+
         {% setcontent news = 'entry/latest/5' %}
         {% set newsCounter = 1 %}
-        <button class="dropdown button expanded secondary">
+        <div class="dropdown button expanded secondary" data-open="fpNewsPopup">
             <div id="fpNews" class="clearfix">
                 <div class="row">
                     <div class="float-left fpNewsTitle"><i class="newspaper icon"></i>| News</div>
@@ -15,9 +17,9 @@
 
                         {% if newsCounter <=3 %}
                             {% if loop.first %}
-                                <div class="float-left show-for-medium fpNewsTitle">&nbsp|&nbsp</div>
+                                <div class="float-left show-for-medium fpNewsTitle">&nbsp;|&nbsp;</div>
                             {% endif %}
-                            <div class="float-left show-for-medium fpNewsTitleItem">{% if not loop.first %}&nbsp|&nbsp{% endif %} {{ newsItem.title }}</div>
+                            <div class="float-left show-for-medium fpNewsTitleItem">{% if not loop.first %}&nbsp;|&nbsp;{% endif %} {{ newsItem.title }}</div>
                         {% endif %}
 
                         {% set newsCounter=newsCounter+1 %}
@@ -26,14 +28,79 @@
 
                 </div>
             </div>
-        </button>
+        </div>
+
         <div class="clearfix"></div>
+
+        <div class="reveal full" id="fpNewsPopup" data-reveal>
+
+            <div id="fpCloseNews">
+                <button class="alert button" data-close aria-label="Close modal" type="button">
+                    Close News
+                </button>
+            </div>
+
+            {% if (news|length >=4) %}
+                {% set colLength = 3 %}
+            {% else %}
+                {% set colLength = 12 / news|length %}
+            {% endif %}
+
+            {% set cardCounter = 1 %}
+
+
+
+            {% for newsItem in news %}
+
+            {% if cardCounter == 1 %}
+            <div class="row">
+                {% endif %}
+
+
+                <div class="column small-12 medium-{{ colLength }}{% if loop.last %} end{% endif %}">
+                    <div class="card">
+                        <a href="{{ newsItem.link }}">
+                            {{ newsItem.image|showimage }}
+                            {% if newsItem.title is defined and newsItem.title !='' %}
+                                <div class="card-section fpNewsCardTitle">
+                                    <div class="fpNewsCardTitle">{{ newsItem.title }}</div>
+                                    <div class="fpNewsCardTeaser">{{ newsItem.teaser|excerpt(100) }}</div>
+                                </div>
+                            {% endif %}
+                        </a>
+                    </div>
+                </div>
+
+
+                {% if loop.last and cardCounter !=4 %}
+            </div>
+            {% endif %}
+
+            {% if cardCounter == 4 %}
+        </div>
+        {% set cardCounter = 1 %}
+        {% else %}
+            {% set cardCounter = cardCounter + 1 %}
+        {% endif %}
+
+
+        {% endfor %}
+
+
     </div>
+
+    </div>
+
+
 
 
     <div id="fpOrbitContainer">
 
-        {% setcontent works = 'works/latest/5' %}
+        {% setcontent works = 'works/latest/5' where { workscategories: 'highlight'}%}
+
+        {{ dump(works) }}
+
+        {% if works is defined and works|length>0 %}
 
         <div class="orbit" aria-label="Favorite Space Pictures" data-orbit>
             <nav class="orbit-bullets">
@@ -45,13 +112,12 @@
 
             </nav>
 
+            <button class="orbit-previous show-for-medium"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;
+            </button>
+            <button class="orbit-next show-for-medium"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;
+            </button>
+
             <ul class="orbit-container">
-                <button class="orbit-previous show-for-medium"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;
-                </button>
-                <button class="orbit-next show-for-medium"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;
-                </button>
-
-
                 {% for work in works %}
 
 
@@ -81,7 +147,14 @@
 
         </div>
 
+
+        {% endif %}
+
     </div>
 
 
 {% endblock main %}
+
+{% block bottomincludes %}
+    <script src="{{ asset('js/index.js', 'theme') }}"></script>
+{% endblock %}
