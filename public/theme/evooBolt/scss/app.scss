@@ -4,6 +4,7 @@
 @import 'foundation';
 @import 'motion-ui';
 @import 'mystyles';
+@import '../bower_components/semantic-ui-icon/icon.css';
 
 @include foundation-global-styles;
 @include foundation-grid;

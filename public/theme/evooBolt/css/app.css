@@ -5,6 +5,7 @@
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
+@import url(../bower_components/semantic-ui-icon/icon.css);
 .slide-in-down.mui-enter {
   transition-duration: 500ms;
   transition-timing-function: linear;
@@ -476,6 +477,26 @@ body a {
   background: black;
   padding-bottom: 30px; }
 
+@media screen and (max-width: 39.9375em) {
+  .fpNewsTitle {
+    font-size: 28px;
+    text-align: center;
+    display: inline-block;
+    float: none;
+    width: 100%; } }
+
+@media screen and (min-width: 40em) {
+  .fpNewsTitle {
+    font-size: 25px; }
+  .fpNewsTitleItem {
+    font-size: 20px; } }
+
+/*  @include breakpoint(small only) {
+    .smallMargin{
+      margin-left: 2%;
+      margin-right: 2%;
+    }
+  }*/
 .fpOrbitImgContainer {
   position: relative;
   width: 100%;

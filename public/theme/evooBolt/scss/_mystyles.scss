@@ -13,7 +13,7 @@ body a {
 }
 
 @include breakpoint(small only) {
-  .smallMargin{
+  .smallMargin {
     margin-left: 2%;
     margin-right: 2%;
   }
@@ -37,6 +37,33 @@ body a {
 
 //index
 //--------
+
+@include breakpoint(small only) {
+  .fpNewsTitle {
+    font-size: 28px;
+    text-align: center;
+    display: inline-block;
+    float: none;
+    width: 100%;
+  }
+}
+
+@include breakpoint(medium up) {
+  .fpNewsTitle {
+    font-size: 25px;
+  }
+
+  .fpNewsTitleItem {
+    font-size: 20px;
+  }
+}
+
+/*  @include breakpoint(small only) {
+    .smallMargin{
+      margin-left: 2%;
+      margin-right: 2%;
+    }
+  }*/
 
 .fpOrbitImgContainer {
   position: relative;
@@ -163,13 +190,9 @@ body a {
   color: black;
 }
 
-
-#workEntryImageList .reveal h4{
+#workEntryImageList .reveal h4 {
   color: black;
 }
-
-
-
 
 //Works Listing
 //-------------
