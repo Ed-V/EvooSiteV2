@@ -1,0 +1,1 @@
+$(function(){function n(){var n=navigator.userAgent||navigator.vendor||window.opera;return/windows phone/i.test(n)?"Windows Phone":/android/i.test(n)?"Android":/iPad|iPhone|iPod/.test(n)&&!window.MSStream?"IOS":"unknown"}"IOS"==n()&&$("#fpNewsPopup").addClass("revealIosFixFull")});
