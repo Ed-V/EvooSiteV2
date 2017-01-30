@@ -32,7 +32,7 @@ workscategories:
     singular_slug: workcategory
     behaves_like: categories
     multiple: true
-    options: [ web, desktop ]
+    options: [ web, desktop, highlight ]
 
 categories:
     name: Categories
@@ -41,4 +41,4 @@ categories:
     singular_slug: category
     behaves_like: categories
     multiple: true
-    options: [ news, events, movies, music, books, life, love, fun ]
+    options: [ news, events, movies, music, books, life, love, fun, projects, samples, website ]
