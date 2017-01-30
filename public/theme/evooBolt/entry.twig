@@ -1,0 +1,84 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+    <div id="workEntryContainer">
+
+        <div id="workEntryTitleContainer" style="background-image: url({{ record.image|image }})">
+            <div id="workEntryTitleSize">
+                <h1 id="workEntryTitle">News</h1>
+            </div>
+
+        </div>
+
+        <div class="row">
+            {% if record.editlink() %}
+                <p>User logged in, select an option</p>
+                <span class="edit-link"><a href="{{ record.editlink() }}"><strong>Edit</strong></a></span>
+            {% endif %}
+        </div>
+
+        <div id="workEntryPublishContainer">
+            <div class="row">
+                <div id="workEntryPublish">
+                    <div class="column medium-6">
+                        <p>Published: {{ record.published|localedatetime }}</p>
+                    </div>
+                    <div class="column medium-6">
+                        <p>Last updated: {{ record.datechanged|localedatetime }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {% if (record.body is defined) and (record.body != '') %}
+            <div id="workEntryContentContainer">
+
+                <div class="row">
+                    <h2 class="fadeScroll">{{ record.title }}</h2>
+                    <div id="workEntryContent" class="fadeScroll smallMargin">
+                        {{ record.body }}
+                    </div>
+                </div>
+
+            </div>
+
+        {% endif %}
+
+
+
+        {# Uncomment this if you wish to dump the entire record to the client, for debugging purposes.
+        {{ dump(record) }}
+        #}
+
+
+    </div>
+
+
+
+
+
+{% endblock main %}
+
+
+{% block extrafooter %}
+
+    <div id="workEntryFooterContainer">
+        <div class="row">
+
+            <div id="workEntryFooter" class="smallMargin">
+                {% include 'partials/_workEntryFooter.twig' with { 'record': record, 'extended': true } %}
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+{% block bottomincludes %}
+    <script src="{{ asset('js/fadescroll.js', 'theme') }}"></script>
+{% endblock %}
