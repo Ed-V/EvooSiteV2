@@ -2,7 +2,46 @@
 
 {% block main %}
 
+    <div id="aboutMeTitleContainer">
+        <div class="row smallMargin">
+            <a href="{{ record.image|image }}"><img class="aboutCenterImage" src="{{ thumbnail(record.image) }}"
+                                                    alt="An image of Edbert Voo"></a>
+            <h1>About Me</h1>
 
+        </div>
+    </div>
+
+
+    <div id="aboutMeContentContainer">
+        <div class="row smallMargin">
+            {{ record.body }}
+        </div>
+    </div>
+
+    <div id="aboutMeSkillsContainer">
+        <div class="row">
+            {# Perhaps we post a small teaser, stored in the 'block' named 'Search teaser' #}
+            {% setcontent block = "block/about-skills" %}
+
+            {# check if we have 'content'. If so, we know we have have a teaser to display. #}
+            {% if block.content is defined %}
+                {{ block.content }}
+            {% endif %}
+        </div>
+    </div>
+
+
+    <div id="aboutMeContactContainer">
+        <div class="row">
+            {# Perhaps we post a small teaser, stored in the 'block' named 'Search teaser' #}
+            {% setcontent block = "block/about-contact" %}
+
+            {# check if we have 'content'. If so, we know we have have a teaser to display. #}
+            {% if block.content is defined %}
+                {{ block.content }}
+            {% endif %}
+        </div>
+    </div>
 
 
 
