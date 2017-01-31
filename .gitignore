@@ -30,5 +30,6 @@ Vagrantfile
 /bolt.log
 /public/theme/evooBolt/config.codekit3
 /evoostuff.txt
+/composer.phar
 /app/config/config.yml
 .htaccess
