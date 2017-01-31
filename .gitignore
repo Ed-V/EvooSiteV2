@@ -8,7 +8,8 @@ vendor/
 
 # NPM, Gulp and Grunt stuff
 node_modules
-bower_components
+#Added for stable host
+#bower_components
 npm-debug.log
 .sass-cache
 
