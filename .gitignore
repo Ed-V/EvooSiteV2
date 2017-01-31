@@ -31,3 +31,4 @@ Vagrantfile
 /public/theme/evooBolt/config.codekit3
 /evoostuff.txt
 /app/config/config.yml
+.htaccess
