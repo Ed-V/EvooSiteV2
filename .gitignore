@@ -2,9 +2,9 @@ cache/
 thumbs/
 vendor/
 # keep files from clogging up git
-public/files
+/public/files
 # Prevent Server Config from syncing, manually edit this through ftp if needed
-app/config/config.yml
+/app/config/config.yml
 
 # NPM, Gulp and Grunt stuff
 node_modules
@@ -30,3 +30,4 @@ Vagrantfile
 /bolt.log
 /public/theme/evooBolt/config.codekit3
 /evoostuff.txt
+/app/config/config.yml
