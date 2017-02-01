@@ -79,7 +79,7 @@ entries:
     record_template: entry.twig
     listing_template: entryListing.twig
     listing_records: 10
-    default_status: publish
+    default_status: draft
     sort: -datepublish
     recordsperpage: 10
 
@@ -125,7 +125,7 @@ works:
     record_template: workEntry.twig
     listing_template: workListing.twig
     listing_records: 10
-    default_status: publish
+    default_status: draft
     sort: -datepublish
     recordsperpage: 10
 
@@ -270,7 +270,7 @@ blocks:
             extensions: [ gif, jpg, png ]
     show_on_dashboard: true
     viewless: true
-    default_status: publish
+    default_status: draft
     searchable: false
     icon_many: "fa:cubes"
     icon_one: "fa:cube"
