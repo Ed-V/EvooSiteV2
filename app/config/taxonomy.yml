@@ -32,7 +32,7 @@ workscategories:
     singular_slug: workcategory
     behaves_like: categories
     multiple: true
-    options: [ web, desktop, highlight ]
+    options: [ web, desktop, mobile, highlight ]
 
 categories:
     name: Categories
