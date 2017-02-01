@@ -33,6 +33,7 @@
   ],
   "private": true,
   "dependencies": {
-    "semantic-ui-icon": "^2.2.6"
+    "semantic-ui-icon": "^2.2.6",
+    "jquery-throttle-debounce": "*"
   }
 }
