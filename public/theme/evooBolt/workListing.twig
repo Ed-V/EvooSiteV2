@@ -42,11 +42,13 @@
 
                 {% if records is defined and records|length>0 %}
 
-                    {% if (records|length >=4) %}
+  {#                  {% if (records|length >=4) %}
                         {% set colLength = 3 %}
                     {% else %}
                         {% set colLength = 12 / records|length %}
-                    {% endif %}
+                    {% endif %}#}
+
+                    {% set colLength = 4 %}
 
                     {% set cardCounter = 1 %}
 

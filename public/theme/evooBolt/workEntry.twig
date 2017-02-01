@@ -85,11 +85,13 @@
                 <div id="workEntryImageList" class="fadeScroll">
 
 
-                    {% if (record.imagelist|length >=4) %}
+{#                    {% if (record.imagelist|length >=4) %}
                         {% set colLength = 3 %}
                     {% else %}
                         {% set colLength = 12 / record.imagelist|length %}
-                    {% endif %}
+                    {% endif %}#}
+
+                    {% set colLength = 3 %}
 
                     {% set cardCounter = 1 %}
 

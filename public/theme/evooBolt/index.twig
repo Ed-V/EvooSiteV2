@@ -41,11 +41,13 @@
             </div>
 
             {% if news is defined and news|length>0 %}
-            {% if (news|length >=4) %}
+{#            {% if (news|length >=4) %}
                 {% set colLength = 3 %}
             {% else %}
                 {% set colLength = 12 / news|length %}
-            {% endif %}
+            {% endif %}#}
+
+            {% set colLength = 3 %}
 
             {% set cardCounter = 1 %}
 
