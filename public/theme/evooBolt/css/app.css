@@ -827,7 +827,9 @@ body a {
   /* for IE 6 */ }
   .fpSlickImgContainer img {
     -webkit-filter: brightness(50%);
-            filter: brightness(50%); }
+            filter: brightness(50%);
+    margin-left: auto;
+    margin-right: auto; }
 
 #fpSlickDots {
   text-align: center; }
