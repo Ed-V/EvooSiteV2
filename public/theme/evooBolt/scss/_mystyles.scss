@@ -262,6 +262,15 @@ $workListingBackground: #233237;
   color: black;
 }
 
+#workListingContainer a {
+
+  color: #984843;
+
+  &:hover {
+    color: #EAC67A;
+  }
+}
+
 //Entry Listing
 //-----------------
 
