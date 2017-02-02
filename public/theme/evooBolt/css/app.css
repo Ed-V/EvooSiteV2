@@ -916,6 +916,11 @@ body a {
 .workEntryRevealWrapper {
   color: black; }
 
+#workListingContainer a {
+  color: #984843; }
+  #workListingContainer a:hover {
+    color: #233237; }
+
 #entryListingTitleContainer {
   background: #984B43;
   padding-top: 0px;
