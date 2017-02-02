@@ -1,9 +1,9 @@
 $(function () {
 
 //Handle IOS Reveal Bug
-if(getMobileOperatingSystem()=='IOS'){
-    $('#fpNewsPopup').addClass('revealIosFixFull');
-}
+    if (getMobileOperatingSystem() == 'IOS') {
+        $('#fpNewsPopup').addClass('revealIosFixFull');
+    }
 
     /**
      * Determine the mobile operating system.
@@ -36,48 +36,61 @@ if(getMobileOperatingSystem()=='IOS'){
 //slick
 $(document).ready(function () {
     $('#fpSlick').slick({
-        autoplay:true,
+        autoplay: true,
         mobileFirst: true,
         prevArrow: "#fpSlickPrev",
         nextArrow: "#fpSlickNext",
         appendDots: "#fpSlickDots",
-        dots:true
+        dots: true
     });
 
-    calcFpSlickHeight();
+    init();
 
     $(window).on("resize", $.throttle(250, function () {
         calcFpSlickHeight();
     }));
 
 
-
     function calcFpSlickHeight() {
         //Set up arrows
-        var fpSlickHeight=$("#fpSlick").height();
-        var fpSlickWidth=$("#fpSlick").width();
-        var fpSlickOffset=$("#fpSlick").offset().top;
-        var prevArrow=$("#fpSlickPrev");
+        var fpSlickHeight = $("#fpSlick").height();
+        var fpSlickWidth = $("#fpSlick").width();
+        var fpSlickOffset = $("#fpSlick").offset().top;
+        var prevArrow = $("#fpSlickPrev");
         var nextArrow = $("#fpSlickNext");
 
-        //(fpSlickHeight/2)-(prevArrow.height()/2)+
-        //Math.round(fpSlickOffset)
 
-        prevArrow.css("top", (fpSlickHeight/2)+prevArrow.height()/2+fpSlickOffset);
-        nextArrow.css("top", (fpSlickHeight/2)+nextArrow.height()/2+fpSlickOffset);
-        nextArrow.css("left", fpSlickWidth-nextArrow.width());
 
+        prevArrow.css("top", (fpSlickHeight / 2) + prevArrow.height() / 2 + fpSlickOffset);
+        nextArrow.css("top", (fpSlickHeight / 2) + nextArrow.height() / 2 + fpSlickOffset);
+        nextArrow.css("left", fpSlickWidth - nextArrow.width());
 
 
         //Set up Text
-        $(".fpWorkTextContainer").css("top", (fpSlickHeight/2)-($(".fpWorkTextContainer").height()/2));
+        $(".fpWorkTextContainer").css("top", (fpSlickHeight / 2) - ($(".fpWorkTextContainer").height() / 2));
 
+    }
+
+    function init() {
         //Set up Nav Dots
         var dots = $("#fpSlickDots li button");
 
         dots.text("");
 
         dots.append($("<i class='circle icon'></i>"));
+
+        var textContainer=$(".fpWorkTextContainer");
+
+        if(textContainer.hasClass("fpNoImage")){
+            var newNode = $("<div></div>");
+            newNode.css("height", textContainer.height()*2);
+            newNode.css("width", textContainer.width());
+
+            $(".fpNoImage").before(newNode);
+        }
+
+
+        calcFpSlickHeight();
 
     }
 

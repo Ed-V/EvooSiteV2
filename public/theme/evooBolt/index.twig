@@ -104,7 +104,6 @@
 
 
         {% if works is defined and works|length>0 %}
-
             <div id="fpSlickDots" class="show-for-medium"></div>
 
             <div id="fpSlick">
@@ -112,11 +111,13 @@
                 {% for work in works %}
 
                     <div class="fpSlickImgContainer">
-                        <img src="{{ work.image|image }}">
-                        <div class="fpWorkTextContainer">
+
+                        {% if work.image|image != "/files/" %} <img
+                            src="{{ work.image|image }}">{% endif %}
+                        <div class="fpWorkTextContainer{% if work.image|image == "/files/" %} fpNoImage{% endif %}">
                             <div class="fpWorkTitle">
                                 <h1>{{ work.values.title }}</h1>
-                            </div>
+                              </div>
                             <div class="fpWorkSub">
                                 <h3>{{ work.group.name }}</h3>
                             </div>
