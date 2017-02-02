@@ -34,6 +34,7 @@
   "private": true,
   "dependencies": {
     "semantic-ui-icon": "^2.2.6",
-    "jquery-throttle-debounce": "*"
+    "jquery-throttle-debounce": "*",
+    "motion-ui": "^1.2.2"
   }
 }
