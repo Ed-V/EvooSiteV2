@@ -39,7 +39,9 @@ $(document).ready(function () {
         autoplay:true,
         mobileFirst: true,
         prevArrow: "#fpSlickPrev",
-        nextArrow: "#fpSlickNext"
+        nextArrow: "#fpSlickNext",
+        appendDots: "#fpSlickDots",
+        dots:true
     });
 
     calcFpSlickHeight();
@@ -69,6 +71,13 @@ $(document).ready(function () {
 
         //Set up Text
         $(".fpWorkTextContainer").css("top", (fpSlickHeight/2)-($(".fpWorkTextContainer").height()/2));
+
+        //Set up Nav Dots
+        var dots = $("#fpSlickDots li button");
+
+        dots.text("");
+
+        dots.append($("<i class='circle icon'></i>"));
 
     }
 

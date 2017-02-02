@@ -829,8 +829,16 @@ body a {
     -webkit-filter: brightness(50%);
             filter: brightness(50%); }
 
-#fpSlickDots .slick-dots li {
-  color: pink; }
+#fpSlickDots {
+  text-align: center; }
+  #fpSlickDots .slick-active i {
+    color: #984B43; }
+  #fpSlickDots .slick-dots li {
+    display: inline;
+    margin-left: 1%;
+    margin-right: 1%; }
+    #fpSlickDots .slick-dots li button {
+      color: white; }
 
 .slick-prev:before, .slick-next:before {
   color: red; }
