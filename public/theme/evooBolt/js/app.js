@@ -8,8 +8,7 @@ $(window).load(function() {
 //Unhide the body once page has finished loading
 $(function () {
   Pace.on("done", function () {
-      $("#mainContent").css("visibility", "visible");
-      $("#primary-menu").css("visibility", "visible");
-      $("#footerContainer").css("visibility", "visible");
+      $(".hiddenLoading").css("visibility", "visible");
+
   });
 });

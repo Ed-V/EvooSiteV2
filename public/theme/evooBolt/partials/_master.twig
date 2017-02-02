@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{ asset('css/app.css', 'theme') }}">
 
     <!-- Page loading script -->
-<script src="{{ asset('other_plugins/pace/pace.min.js', 'theme') }}"></script>
+    <script src="{{ asset('other_plugins/pace/pace.min.js', 'theme') }}"></script>
 
 
     {% block headincludes %}
@@ -28,31 +28,35 @@
 </head>
 <body>
 
-{% include('partials/_topbar.twig') %}
-
-{% block header %}
-
-{% endblock %}
-
-{% block body %}
-
-    <div id="mainContent">
-        {% block main %}
-
-        {% endblock %}
-    </div>
+<div class="hiddenLoading">
+    {% include('partials/_topbar.twig') %}
 
 
 
-{% endblock %}
 
 
-{% block extrafooter %}
-{% endblock %}
-{% include('partials/_footer.twig') %}
-{% include('partials/_scripts.twig') %}
-{% block bottomincludes %}
-{% endblock bottomincludes %}
+    {% block body %}
+
+        <div id="mainContent">
+            {% block main %}
+
+            {% endblock %}
+        </div>
+
+
+
+    {% endblock %}
+
+
+    {% block extrafooter %}
+    {% endblock %}
+    {% include('partials/_footer.twig') %}
+    {% include('partials/_scripts.twig') %}
+    {% block bottomincludes %}
+    {% endblock bottomincludes %}
+
+</div>
+
 
 </body>
 </html>
