@@ -4,7 +4,9 @@
 @import 'foundation';
 @import 'motion-ui';
 @import 'mystyles';
+@import '../other_plugins/pace/pace.css';
 @import '../bower_components/semantic-ui-icon/icon.css';
+
 
 @include foundation-global-styles;
 @include foundation-grid;

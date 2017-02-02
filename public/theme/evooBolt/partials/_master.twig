@@ -13,9 +13,14 @@
             {% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif -%}
         {% endblock %}
     </title>
+
+
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans"/>
     <link rel="stylesheet" href="{{ asset('css/app.css', 'theme') }}">
+
+    <!-- Page loading script -->
+<script src="{{ asset('other_plugins/pace/pace.min.js', 'theme') }}"></script>
 
 
     {% block headincludes %}

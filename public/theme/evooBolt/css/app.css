@@ -5,6 +5,7 @@
  * foundation.zurb.com
  * Licensed under MIT Open Source
  */
+@import url(../other_plugins/pace/pace.css);
 @import url(../bower_components/semantic-ui-icon/icon.css);
 .slide-in-down.mui-enter {
   transition-duration: 500ms;
@@ -475,6 +476,15 @@ body a {
 
 .darkText {
   color: black; }
+
+#mainContent {
+  visibility: hidden; }
+
+#primary-menu {
+  visibility: hidden; }
+
+#footerContainer {
+  visibility: hidden; }
 
 #primary-menu .first {
   font-style: italic; }
