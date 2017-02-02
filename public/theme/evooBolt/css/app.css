@@ -772,6 +772,11 @@ body a {
 #primary-menu .first {
   font-style: italic; }
 
+#primary-menu a {
+  color: #984843; }
+  #primary-menu a:hover {
+    color: #EAC67A; }
+
 #footerContainer {
   padding-top: 30px;
   background: black;
@@ -2313,11 +2318,11 @@ h6 {
 
 a {
   line-height: inherit;
-  color: #984843;
+  color: #EAC67A;
   text-decoration: none;
   cursor: pointer; }
   a:hover, a:focus {
-    color: #EAC67A;
+    color: #984843;
     text-decoration: underline; }
   a img {
     border: 0; }
@@ -3474,7 +3479,7 @@ select {
   content: '';
   border-bottom-width: 0;
   border-top-style: solid;
-  border-color: #984843 transparent transparent;
+  border-color: #EAC67A transparent transparent;
   right: 5px;
   margin-top: -3px; }
 
@@ -3506,7 +3511,7 @@ select {
   content: '';
   border-left-width: 0;
   border-right-style: solid;
-  border-color: transparent #984843 transparent transparent; }
+  border-color: transparent #EAC67A transparent transparent; }
 
 .dropdown.menu.vertical > li.opens-right > a::after {
   display: block;
@@ -3516,7 +3521,7 @@ select {
   content: '';
   border-right-width: 0;
   border-left-style: solid;
-  border-color: transparent transparent transparent #984843; }
+  border-color: transparent transparent transparent #EAC67A; }
 
 @media print, screen and (min-width: 40em) {
   .dropdown.menu.medium-horizontal > li.opens-left > .is-dropdown-submenu {
@@ -3538,7 +3543,7 @@ select {
     content: '';
     border-bottom-width: 0;
     border-top-style: solid;
-    border-color: #984843 transparent transparent;
+    border-color: #EAC67A transparent transparent;
     right: 5px;
     margin-top: -3px; }
   .dropdown.menu.medium-vertical > li .is-dropdown-submenu {
@@ -3559,7 +3564,7 @@ select {
     content: '';
     border-left-width: 0;
     border-right-style: solid;
-    border-color: transparent #984843 transparent transparent; }
+    border-color: transparent #EAC67A transparent transparent; }
   .dropdown.menu.medium-vertical > li.opens-right > a::after {
     display: block;
     width: 0;
@@ -3568,7 +3573,7 @@ select {
     content: '';
     border-right-width: 0;
     border-left-style: solid;
-    border-color: transparent transparent transparent #984843; } }
+    border-color: transparent transparent transparent #EAC67A; } }
 
 @media print, screen and (min-width: 64em) {
   .dropdown.menu.large-horizontal > li.opens-left > .is-dropdown-submenu {
@@ -3590,7 +3595,7 @@ select {
     content: '';
     border-bottom-width: 0;
     border-top-style: solid;
-    border-color: #984843 transparent transparent;
+    border-color: #EAC67A transparent transparent;
     right: 5px;
     margin-top: -3px; }
   .dropdown.menu.large-vertical > li .is-dropdown-submenu {
@@ -3611,7 +3616,7 @@ select {
     content: '';
     border-left-width: 0;
     border-right-style: solid;
-    border-color: transparent #984843 transparent transparent; }
+    border-color: transparent #EAC67A transparent transparent; }
   .dropdown.menu.large-vertical > li.opens-right > a::after {
     display: block;
     width: 0;
@@ -3620,7 +3625,7 @@ select {
     content: '';
     border-right-width: 0;
     border-left-style: solid;
-    border-color: transparent transparent transparent #984843; } }
+    border-color: transparent transparent transparent #EAC67A; } }
 
 .dropdown.menu.align-right .is-dropdown-submenu.first-sub {
   top: 100%;
@@ -3668,7 +3673,7 @@ select {
     content: '';
     border-left-width: 0;
     border-right-style: solid;
-    border-color: transparent #984843 transparent transparent; }
+    border-color: transparent #EAC67A transparent transparent; }
   .is-dropdown-submenu .is-dropdown-submenu-parent.opens-right > a::after {
     display: block;
     width: 0;
@@ -3677,7 +3682,7 @@ select {
     content: '';
     border-right-width: 0;
     border-left-style: solid;
-    border-color: transparent transparent transparent #984843; }
+    border-color: transparent transparent transparent #EAC67A; }
   .is-dropdown-submenu .is-dropdown-submenu {
     margin-top: -1px; }
   .is-dropdown-submenu > li {

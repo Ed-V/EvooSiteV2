@@ -40,6 +40,16 @@ body a {
   font-style: italic;
 }
 
+
+#primary-menu a {
+
+  color: #984843;
+
+  &:hover{
+    color: #EAC67A;
+  }
+}
+
 //Footer
 //-----------------
 
