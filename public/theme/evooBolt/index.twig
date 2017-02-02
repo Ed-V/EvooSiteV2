@@ -41,11 +41,11 @@
             </div>
 
             {% if news is defined and news|length>0 %}
-{#            {% if (news|length >=4) %}
-                {% set colLength = 3 %}
-            {% else %}
-                {% set colLength = 12 / news|length %}
-            {% endif %}#}
+            {#            {% if (news|length >=4) %}
+                            {% set colLength = 3 %}
+                        {% else %}
+                            {% set colLength = 12 / news|length %}
+                        {% endif %}#}
 
             {% set colLength = 3 %}
 
@@ -98,58 +98,45 @@
 
 
 
-    <div id="fpOrbitContainer">
+    <div id="fpSlickContainer">
 
         {% setcontent works = 'works/latest/5' where { workscategories: 'highlight'} %}
 
 
         {% if works is defined and works|length>0 %}
 
-            <div class="orbit" aria-label="Favorite Space Pictures" data-orbit>
-                <nav class="orbit-bullets">
-                    {% for i in 0..(works|length-1) %}
-                        <button {% if loop.first %}class="is-active"{% endif %} data-slide="{{ i }}"><span
-                                    class="show-for-sr">First slide details.</span><span
-                                    class="show-for-sr">Current Slide</span></button>
-                    {% endfor %}
+            <div id="fpSlickDots"></div>
 
-                </nav>
+            <div id="fpSlick">
 
-                <button class="orbit-previous show-for-medium"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;
-                </button>
-                <button class="orbit-next show-for-medium"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;
-                </button>
+                {% for work in works %}
 
-                <ul class="orbit-container">
-                    {% for work in works %}
-
-
-                        <li class="{% if loop.first %}is-active {% endif %}orbit-slide">
-                            <div class="fpOrbitImgContainer">
-                                <img class="orbit-image" src="{{ work.image|image }}">
-                                <div class="fpWorkTextContainer">
-                                    <div class="fpWorkTitle">
-                                        <h1>{{ work.values.title }}</h1>
-                                    </div>
-                                    <div class="fpWorkSub">
-                                        <h3>{{ work.group.name }}</h3>
-                                    </div>
-                                    <div class="fpWorkButton">
-                                        <h3><a href="{{ work.link }}">See
-                                                the {{ work.group.name|slice(0, work.group.name|length-1 ) }}</a></h3>
-                                    </div>
-                                </div>
-
+                    <div class="fpSlickImgContainer">
+                        <img src="{{ work.image|image }}">
+                        <div class="fpWorkTextContainer">
+                            <div class="fpWorkTitle">
+                                <h1>{{ work.values.title }}</h1>
                             </div>
-                        </li>
+                            <div class="fpWorkSub">
+                                <h3>{{ work.group.name }}</h3>
+                            </div>
+                            <div class="fpWorkButton">
+                                <h3><a href="{{ work.link }}">See
+                                        the {{ work.group.name|slice(0, work.group.name|length-1 ) }}</a></h3>
+                            </div>
+                        </div>
 
-                    {% endfor %}
+                    </div>
 
 
-                </ul>
+                {% endfor %}
 
             </div>
 
+            <div id="fpSlickButton">
+                <button class="fpSlickButton" id="fpSlickPrev"><i class="arrow circle outline left icon"></i></button>
+                <button class="fpSlickButton" id="fpSlickNext"><i class="arrow circle outline right icon"></i></button>
+            </div>
 
         {% endif %}
 
