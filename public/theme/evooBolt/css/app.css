@@ -863,6 +863,10 @@ body a {
 #workEntryTechUsedContainer {
   background: #EAC67A;
   color: black; }
+  #workEntryTechUsedContainer a {
+    color: #984843; }
+    #workEntryTechUsedContainer a:hover {
+      color: #233237; }
 
 #workEntryImageListContainer {
   background: #984B43; }

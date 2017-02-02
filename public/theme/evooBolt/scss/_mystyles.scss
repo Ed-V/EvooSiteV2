@@ -40,12 +40,11 @@ body a {
   font-style: italic;
 }
 
-
 #primary-menu a {
 
   color: #984843;
 
-  &:hover{
+  &:hover {
     color: #EAC67A;
   }
 }
@@ -178,6 +177,18 @@ body a {
 #workEntryTechUsedContainer {
   background: #EAC67A;
   color: black;
+
+  a {
+
+    color: #984843;
+
+    &:hover {
+      color: #233237;
+
+    }
+
+  }
+
 }
 
 #workEntryImageListContainer {
@@ -306,7 +317,7 @@ $entryListingBackground: #984B43;
 #aboutMeContactContainer {
   background: #984B43;
 
-  a{
+  a {
     color: #00FF77;
   }
 
