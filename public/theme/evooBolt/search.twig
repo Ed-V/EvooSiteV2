@@ -25,7 +25,8 @@
             {% endif %}
 
             <form method="get" action="{{ path('search') }}" id="searchform-inline" enctype="text/plain">
-                <input type="search" value="{{ search|default() }}" placeholder="{{ __('general.phrase.search-ellipsis') }}" name="search" >
+                <input type="search" value="{{ search|default() }}"
+                       placeholder="{{ __('general.phrase.search-ellipsis') }}" name="search">
                 <button type="submit" class="button">{{ __('general.phrase.search') }}</button>
             </form>
 
@@ -44,7 +45,7 @@
                 </div>
 
                 <div class="reveal large darkText" id="result{{ loop.index }}" data-reveal>
-<a href="{{ record.image|image }}">{{ record.image|showimage }}</a>
+                    <a href="{{ record.link }}">{{ record.image|showimage }}</a>
                     <button class="close-button" data-close aria-label="Close modal" type="button">
                         <span aria-hidden="true">&times;</span>
                     </button>
