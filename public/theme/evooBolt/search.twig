@@ -35,7 +35,7 @@
                 <div class="media-object">
                     <div class="media-object-section">
                         <div class="thumbnail">
-                            <a data-open="result{{ loop.index }}"><img src="{{ thumbnail(record.image) }}"></a>
+                            <a href="{{ record.link }}"><img src="{{ thumbnail(record.image) }}"></a>
                         </div>
                     </div>
                     <div class="media-object-section">
@@ -44,12 +44,12 @@
                     </div>
                 </div>
 
-                <div class="reveal large darkText" id="result{{ loop.index }}" data-reveal>
-                    <a href="{{ record.link }}">{{ record.image|showimage }}</a>
+{#                <div class="reveal large darkText" id="result{{ loop.index }}" data-reveal>
+                    <a href="{{ record.image|image }}">{{ record.image|showimage }}</a>
                     <button class="close-button" data-close aria-label="Close modal" type="button">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                </div>
+                </div>#}
 
                 {% if not loop.last %}
                     <hr>
