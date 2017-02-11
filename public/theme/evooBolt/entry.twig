@@ -12,6 +12,7 @@
         </div>
 
         <div class="row">
+
             {% if record.editlink() %}
                 <p>User logged in, select an option</p>
                 <span class="edit-link"><a href="{{ record.editlink() }}"><strong>Edit</strong></a></span>
@@ -22,7 +23,7 @@
             <div class="row">
                 <div id="workEntryPublish">
                     <div class="column medium-6">
-                        <p>Published: {{ record.published|localedatetime }}</p>
+                        <p>Published: {{ record.datepublish|localedatetime }}</p>
                     </div>
                     <div class="column medium-6">
                         <p>Last updated: {{ record.datechanged|localedatetime }}</p>
