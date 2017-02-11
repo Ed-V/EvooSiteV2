@@ -780,6 +780,12 @@ body a {
   #primary-menu a:hover {
     color: #EAC67A; }
 
+#primary-menu .top-bar-right div {
+  float: left; }
+
+#primary-menu .top-bar-right form {
+  float: left; }
+
 #footerContainer {
   padding-top: 30px;
   background: black;

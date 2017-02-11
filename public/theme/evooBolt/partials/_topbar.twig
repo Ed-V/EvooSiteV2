@@ -8,6 +8,10 @@
     {{ menu(template = 'partials/_sub_menu.twig') }}
   </div>
   <div class="top-bar-right">
+    <div>
+      <a href="https://ca.linkedin.com/in/edvoo" target="_blank"><i class="linkedin square icon socialIcon"></i></a>
+      <a href="https://github.com/Ed-V" target="_blank"><i class="github square icon socialIcon"></i></a>
+    </div>
     <form method="get" action="{{ path('search') }}" id="searchform-inline" enctype="text/plain">
       <ul class="menu">
         <li><input type="search" value="{% if search is defined %}{{ search|escape }}{% endif %}" placeholder="{{ __('general.phrase.search-ellipsis') }}" name="search"></li>
@@ -16,3 +20,5 @@
     </form>
   </div>
 </div>
+
+<div class="clearfix"></div>
