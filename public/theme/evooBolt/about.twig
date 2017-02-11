@@ -13,13 +13,13 @@
 
 
     <div id="aboutMeContentContainer">
-        <div class="row smallMargin">
+        <div class="row smallMargin fadeScroll">
             {{ record.body }}
         </div>
     </div>
 
     <div id="aboutMeSkillsContainer">
-        <div class="row smallMargin">
+        <div class="row smallMargin fadeScroll">
             {# Perhaps we post a small teaser, stored in the 'block' named 'Search teaser' #}
             {% setcontent block = "block/about-skills" %}
 
@@ -32,7 +32,7 @@
 
 
     <div id="aboutMeContactContainer">
-        <div class="row smallMargin">
+        <div class="row smallMargin fadeScroll">
             {# Perhaps we post a small teaser, stored in the 'block' named 'Search teaser' #}
             {% setcontent block = "block/about-contact" %}
 
@@ -46,3 +46,8 @@
 
 
 {% endblock main %}
+
+{% block bottomincludes %}
+    <script src="{{ asset('js/fadescroll.js', 'theme') }}"></script>
+{% endblock %}
+
