@@ -769,6 +769,9 @@ body a {
 .hiddenLoading {
   visibility: hidden; }
 
+.socialIcon {
+  font-size: 2em !important; }
+
 #primary-menu .first {
   font-style: italic; }
 
