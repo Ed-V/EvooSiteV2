@@ -810,7 +810,8 @@ body a {
   color: black; }
 
 #fpCloseNews {
-  position: fixed; }
+  position: fixed;
+  z-index: 100; }
 
 .fpWorkTextContainer {
   position: absolute;
