@@ -40,100 +40,58 @@
                 {% endif %}
 
 
-                {% if records is defined and records|length>0 %}
-
-  {#                  {% if (records|length >=4) %}
-                        {% set colLength = 3 %}
-                    {% else %}
-                        {% set colLength = 12 / records|length %}
-                    {% endif %}#}
-
-                    {% set colLength = 4 %}
-
-                    {% set cardCounter = 1 %}
-
-
-                {% endif %}
-
-
 
                 {% for record in records %}
 
-                {% if cardCounter == 1 %}
-                <div class="row" data-equalizer data-equalize-on="medium">
+
+                    {% if loop.first %}
+                        <div class="ui stackable cards">
+                    {% endif %}
+
+                    <a class="card" href="{{ record.link }}">
+                        <div class="image">
+                            {{ record.image|showimage }}
+                        </div>
+                        <div class="header">
+                            {{ record.title }}
+                        </div>
+                        <div class="content">
+                            {{ record.teaser }}
+                        </div>
+                    </a>
+
+                    {% if loop.last %}
+                        </div>
                     {% endif %}
 
 
-                    <div class="column small-12 medium-{{ colLength }}{% if loop.last %} end{% endif %}" >
-                        <div class="card fadeScroll">
-                            <a href="{{ record.link }}">
-                                {{ record.image|showimage }}
-                                <div class="card-section" data-equalizer-watch>
-                                    <h2>{{ record.title }}</h2>
-                                    <p>{{ record.teaser }}</p>
-                                </div>
-                            </a>
-
-                        </div>
-                    </div>
 
 
-                    {% if loop.last and cardCounter !=4 %}
-                </div>
-                {% endif %}
 
-                {% if cardCounter == 4 %}
+                {% else %}
+                    <article>
+
+                        <h2>{{ __('general.phrase.no-content-found') }}</h2>
+
+                        <p>
+                            {{ __("Unfortunately, no content could be found. Try another page, or go to the <a href=\"%paths_root%\">homepage</a>.", {'%paths_root%': path('homepage')} ) }}
+                        </p>
+
+                    </article>
+                {% endfor %}
+
+                {# If there are more records than will fit on one page, the pager is shown. #}
+                {{ pager(template = 'partials/_sub_pager.twig') }}
+
             </div>
-            {% set cardCounter = 1 %}
-            {% else %}
-                {% set cardCounter = cardCounter + 1 %}
-            {% endif %}
-
-
-            {#
-                                    {{ popup(record.image, 1200, 500) }}
-
-                                    #}
-            {# display something introduction-like.. #}{#
-
-                                    {% if record.introduction %}
-                                        {{ record.introduction }}
-                                    {% elseif record.teaser %}
-                                        {{ record.teaser }}
-                                    {% else %}
-                                        <p>{{ record.excerpt(300, false, search|default('')) }}</p>
-                                    {% endif %}
-            #}
-
-            {#{% include 'partials/_recordfooter.twig' with { 'record': record } %}#}
-
-
-
-
-            {% else %}
-                <article>
-
-                    <h2>{{ __('general.phrase.no-content-found') }}</h2>
-
-                    <p>
-                        {{ __("Unfortunately, no content could be found. Try another page, or go to the <a href=\"%paths_root%\">homepage</a>.", {'%paths_root%': path('homepage')} ) }}
-                    </p>
-
-                </article>
-            {% endfor %}
-
-            {# If there are more records than will fit on one page, the pager is shown. #}
-            {{ pager(template = 'partials/_sub_pager.twig') }}
-
         </div>
-    </div>
 
     </div>
 
 
 {% endblock main %}
 
-{% block bottomincludes %}
-    <script src="{{ asset('js/fadescroll.js', 'theme') }}"></script>
-{% endblock %}
+    {% block bottomincludes %}
+        <script src="{{ asset('js/fadescroll.js', 'theme') }}"></script>
+    {% endblock %}
 
