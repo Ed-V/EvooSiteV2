@@ -865,14 +865,6 @@ body a {
   .fpSlickButton:hover i {
     color: #eac67a; }
 
-.orbit-previous {
-  -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in; }
-
-.orbit-next {
-  -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in; }
-
 #workEntryTitleContainer {
   background: no-repeat;
   background-size: cover; }
