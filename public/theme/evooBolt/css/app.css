@@ -7,6 +7,7 @@
  */
 @import url(../other_plugins/pace/pace.css);
 @import url(../bower_components/semantic-ui-icon/icon.css);
+@import url(../bower_components/semantic-ui-card/card.css);
 .slide-in-down.mui-enter {
   -webkit-transition-duration: 500ms;
           transition-duration: 500ms;
@@ -3219,28 +3220,6 @@ select {
     padding-right: 3rem;
     padding-bottom: 3rem;
     padding-left: 3rem; }
-
-.card {
-  margin-bottom: 1rem;
-  border: 1px solid #e6e6e6;
-  border-radius: 0;
-  background: #fefefe;
-  box-shadow: none;
-  overflow: hidden;
-  color: #fefefe; }
-  .card > :last-child {
-    margin-bottom: 0; }
-
-.card-divider {
-  padding: 1rem;
-  background: #e6e6e6; }
-  .card-divider > :last-child {
-    margin-bottom: 0; }
-
-.card-section {
-  padding: 1rem; }
-  .card-section > :last-child {
-    margin-bottom: 0; }
 
 .close-button {
   position: absolute;

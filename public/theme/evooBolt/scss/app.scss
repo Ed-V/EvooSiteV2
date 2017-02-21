@@ -6,6 +6,7 @@
 @import 'mystyles';
 @import '../other_plugins/pace/pace.css';
 @import '../bower_components/semantic-ui-icon/icon.css';
+@import '../bower_components/semantic-ui-card/card.css';
 
 
 @include foundation-global-styles;
@@ -21,7 +22,7 @@
 @include foundation-breadcrumbs;
 @include foundation-button-group;
 @include foundation-callout;
-@include foundation-card;
+//@include foundation-card;
 @include foundation-close-button;
 @include foundation-menu;
 @include foundation-menu-icon;
