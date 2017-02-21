@@ -905,7 +905,11 @@ body a {
       color: #233237; }
 
 #workEntryImageListContainer {
-  background: #984B43; }
+  background: #984B43;
+  padding-bottom: 30px; }
+
+#workEntryImageList {
+  margin-top: 3%; }
 
 #workEntryContainer h2 {
   text-align: center;
@@ -956,6 +960,9 @@ body a {
   color: #984843; }
   #workListingContainer a:hover {
     color: #233237; }
+
+#workListingContainer {
+  padding-bottom: 30px; }
 
 #entryListingTitleContainer {
   background: #984B43;
