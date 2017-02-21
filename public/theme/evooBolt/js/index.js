@@ -50,6 +50,10 @@ $(document).ready(function () {
         calcFpSlickHeight();
     }));
 
+    $(".title-bar .menu-icon").on("click", function () {
+        calcFpSlickHeight();
+    });
+
 
     function calcFpSlickHeight() {
         //Set up arrows
