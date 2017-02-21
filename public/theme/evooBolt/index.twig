@@ -41,57 +41,55 @@
             </div>
 
             {% if news is defined and news|length>0 %}
-            {#            {% if (news|length >=4) %}
-                            {% set colLength = 3 %}
-                        {% else %}
-                            {% set colLength = 12 / news|length %}
-                        {% endif %}#}
-
-            {% set colLength = 3 %}
-
-            {% set cardCounter = 1 %}
+                {#            {% if (news|length >=4) %}
+                                {% set colLength = 3 %}
+                            {% else %}
+                                {% set colLength = 12 / news|length %}
+                            {% endif %}#}
 
 
 
-            {% for newsItem in news %}
-
-            {% if cardCounter == 1 %}
-            <div class="row">
-                {% endif %}
 
 
-                <div class="column small-12 medium-{{ colLength }}{% if loop.last %} end{% endif %}">
-                    <div class="card">
-                        <a href="{{ newsItem.link }}">
-                            {{ newsItem.image|showimage }}
-                            {% if newsItem.title is defined and newsItem.title !='' %}
-                                <div class="card-section fpNewsCardTitle">
-                                    <div class="fpNewsCardTitle">{{ newsItem.title }}</div>
-                                    <div class="fpNewsCardTeaser">{{ newsItem.teaser|excerpt(100) }}</div>
+                {% for newsItem in news %}
+
+                    {% if loop.first %}
+                        <div class="cards stackable ui">
+                    {% endif %}
+
+
+
+                        <div class="card">
+                            <a href="{{ newsItem.link }}">
+                                <div class="image">
+                                    {{ newsItem.image|showimage }}
                                 </div>
-                            {% endif %}
-                        </a>
-                    </div>
-                </div>
+                                {% if newsItem.title is defined and newsItem.title !='' %}
+                                    <div class="header fpNewsCardTitle">
+                                        <div class="fpNewsCardTitle">{{ newsItem.title }}</div>
+                                    </div>
+
+                                    <div class="content">
+                                        <div class="fpNewsCardTeaser">{{ newsItem.teaser|excerpt(100) }}</div>
+                                    </div>
+
+                                {% endif %}
+                            </a>
+                        </div>
 
 
-                {% if loop.last and cardCounter !=4 %}
-            </div>
+
+                    {% if loop.last %}
+                        </div>
+                    {% endif %}
+
+
+
+                {% endfor %}
             {% endif %}
 
-            {% if cardCounter == 4 %}
+
         </div>
-        {% set cardCounter = 1 %}
-        {% else %}
-            {% set cardCounter = cardCounter + 1 %}
-        {% endif %}
-
-
-        {% endfor %}
-        {% endif %}
-
-
-    </div>
 
     </div>
 
@@ -117,7 +115,7 @@
                         <div class="fpWorkTextContainer{% if work.image|image == "/files/" %} fpNoImage{% endif %}">
                             <div class="fpWorkTitle">
                                 <h1>{{ work.values.title }}</h1>
-                              </div>
+                            </div>
                             <div class="fpWorkSub">
                                 <h3>{{ work.group.name }}</h3>
                             </div>
