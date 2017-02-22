@@ -89,6 +89,7 @@ $(document).ready(function () {
             }
 
             $(".slick-slide").height(calcHeight);
+            $(".slick-slide img").height(calcHeight)
         }
 
 
