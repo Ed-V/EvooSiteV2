@@ -78,6 +78,7 @@ $(document).ready(function () {
     function sizeFpSlick() {
         var fpSlickOffset = $("#fpSlick").offset().top;
         var windowHeight = $(window).height();
+        var windowWidth = $(window).width();
 
         if(fpSlickOffset+$("#fpSlick").height()>windowHeight)
         {
@@ -89,13 +90,34 @@ $(document).ready(function () {
             }
 
             $(".slick-slide").height(calcHeight);
-            $(".slick-slide img").height(calcHeight)
+            $(".slick-slide img").each(function (index, img) {
+                var aspectSize = calculateAspectRatioFit($(img).width(), $(img).height(), windowWidth, calcHeight);
+                $(img).height(aspectSize.height);
+                $(img).width(aspectSize.width);
+            })
         }
 
 
 
 
 
+    }
+
+    /**
+     * Conserve aspect ratio of the orignal region. Useful when shrinking/enlarging
+     * images to fit into a certain area. Credit to Jason J. Nathan
+     *
+     * @param {Number} srcWidth Source area width
+     * @param {Number} srcHeight Source area height
+     * @param {Number} maxWidth Fittable area maximum available width
+     * @param {Number} maxHeight Fittable area maximum available height
+     * @return {Object} { width, heigth }
+     */
+    function calculateAspectRatioFit(srcWidth, srcHeight, maxWidth, maxHeight) {
+
+        var ratio = Math.min(maxWidth / srcWidth, maxHeight / srcHeight);
+
+        return { width: srcWidth*ratio, height: srcHeight*ratio };
     }
 
     function init() {
