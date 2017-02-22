@@ -746,8 +746,8 @@
           animation-delay: 700ms !important; }
 
 body a {
-  -webkit-transition: all .2s ease-in;
-  transition: all .2s ease-in; }
+  -webkit-transition: color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out; }
 
 .show-for-none {
   display: none; }
@@ -829,8 +829,8 @@ body a {
   .fpWorkButton a:hover {
     border: #EAC67A solid 1px;
     color: #EAC67A;
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in; }
+    -webkit-transition: color .2s ease-in;
+    transition: color .2s ease-in; }
 
 .fpSlickImgContainer {
   position: relative;
@@ -860,8 +860,8 @@ body a {
   position: absolute;
   font-size: 3em; }
   .fpSlickButton i {
-    -webkit-transition: all .2s ease-in;
-    transition: all .2s ease-in;
+    -webkit-transition: color .2s ease-in;
+    transition: color .2s ease-in;
     color: rgba(255, 255, 255, 0.5); }
   .fpSlickButton:hover i {
     color: #eac67a; }

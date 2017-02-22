@@ -1,7 +1,7 @@
 //body
 //-------
 body a {
-  transition: all .2s ease-in;
+  transition: color 0.2s ease-in-out
 }
 
 .show-for-none {
@@ -130,7 +130,7 @@ body a {
   &:hover {
     border: #EAC67A solid 1px;
     color: #EAC67A;
-    transition: all .2s ease-in;
+    transition: color .2s ease-in;
   }
 
 }
@@ -179,7 +179,7 @@ $sickDotColor: rgb(255, 255, 255);
   font-size: 3em;
 
   i {
-    transition: all .2s ease-in;
+    transition: color .2s ease-in;
 
     color: rgba(255, 255, 255, 0.5);
   }
