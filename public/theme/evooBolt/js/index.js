@@ -75,6 +75,22 @@ $(document).ready(function () {
 
     }
 
+    function sizeFpSlick() {
+        var fpSlickOffset = $("#fpSlick").offset().top;
+        var windowHeight = $(window).height();
+
+        if(fpSlickOffset+$("#fpSlick").height()>windowHeight)
+        {
+            //console.log(fpSlickOffset);
+            $(".slick-slide").height($(window).height()-fpSlickOffset);
+        }
+
+
+
+
+
+    }
+
     function init() {
         //Set up Nav Dots
         var dots = $("#fpSlickDots li button");
@@ -93,6 +109,7 @@ $(document).ready(function () {
             $(".fpNoImage").before(newNode);
         }
 
+        sizeFpSlick();
 
         calcFpSlickHeight();
 
