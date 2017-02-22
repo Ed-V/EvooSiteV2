@@ -81,8 +81,14 @@ $(document).ready(function () {
 
         if(fpSlickOffset+$("#fpSlick").height()>windowHeight)
         {
-            //console.log(fpSlickOffset);
-            $(".slick-slide").height($(window).height()-fpSlickOffset);
+            var calcHeight = $(window).height()-fpSlickOffset;
+
+            if(calcHeight<360)
+            {
+                calcHeight = 360;
+            }
+
+            $(".slick-slide").height(calcHeight);
         }
 
 
